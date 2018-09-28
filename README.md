@@ -89,10 +89,30 @@ tree-lstm
 
 14、Context-Sensitive Lexicon Features for Neural Sentiment Analysis
 
+情感词典中的词标记出来，通过hidden state得到一个权重，一个句子中所有情感词加权有一个得分，句子表示最后有一个得分，两个得分加权得到最后的分数
+
 15、Linguistically Regularized LSTM for Sentiment Classification
 
+考虑了情感词、否定词、程度副词
 
-Sentiment Lexicon Enhanced Attention-Based LSTM for Sentiment Classification
+16、Sentiment Lexicon Enhanced Attention-Based LSTM for Sentiment Classification  aaai2018 abstract  lei是作者
+
+这是个2页的摘要型文章，引入情感词典，将一个句子中每个情感词的hidden求和平均得到hs，然后每个词与hs进行attention得到最后句子表示。
+
+17、A Multi-sentiment-resource Enhanced Attention Network for Sentiment  作者lei同时发表了好几篇文章    acl2018
+
+利用到了情感词、程度副词、否定词信息，先进行交互（句子和情感词、否定、程度副词），更新表示，再gru，然后同16，计算attention，方法是很新，但是怎么理解呢
+
+18、SAAN: A Sentiment-Aware Attention Network for Sentiment Analysis     sigir2018
+
+公式很复杂感觉。
+
+19、LAAN: A Linguistic-Aware Attention Network for Sentiment Analysis      www2018
+
+和SAAN有点像，也没有搞懂。
+
+20、
+
 ## 结果
 
 Model | SST-5  | SST-2 | MR  | subj |trec
@@ -107,9 +127,16 @@ Model | SST-5  | SST-2 | MR  | subj |trec
 8     |52.4    | 89.5  |82.3 |94.0  | 96.1
 9     |48      | 81.9  |/    |/     | /
 10    |51.0    | 88.0  | /   |/     |/
-10    |49.6    | 87.9  | /   |94.1  |/
+14    |51.1    | 89.2  | /   |/     |/
+15    |50.6    |   /   | 82.1|/     |/
+16    |49.3    |       | 84  |/     |/
+17    |51.4    |       | 84.5|/     |/
+18    |49.7    |       | 84.3|/     |/
+19    |49.1    |       | 83.9|/     |/
 
 
 ## 个人看法
 
-情感分类不同于文本分类，两者有共通之处，比如体育用词多就属于体育，正面词多更倾向于正面情感，但是这样用简单的规则即可，大家研究各种各样的方法，是为了解决那些比较难判断的，或者表述很复杂，不直接表达情感，说这个好，那个不好，但是总体上好。情感分类只用n-gram信息还远远不够，还需要情感信息，比如人们研究如何构造情感词典，使用的特征包括正面情感词的个数、负面的个数、感叹词的个数、否定词的个数等等
+情感分类不同于文本分类，两者有共通之处，比如体育用词多就属于体育，正面词多更倾向于正面情感，但是这样用简单的规则即可，大家研究各种各样的方法，是为了解决那些比较难判断的，或者表述很复杂，不直接表达情感，说这个好，那个不好，但是总体上好。情感分类只用n-gram信息还远远不够，还需要情感信息，比如人们研究如何构造情感词典，使用的特征包括正面情感词的个数、负面的个数、感叹词的个数、否定词的个数等等。
+
+所以在神经网络里，我觉得还是要嵌入情感信息，但是该怎么嵌入呢，还没有很好的解决方案。
