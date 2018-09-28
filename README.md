@@ -111,7 +111,9 @@ tree-lstm
 
 和SAAN有点像，也没有搞懂。
 
-20、
+20、Lexicon integrated cnn models with attention for sentiment analysis
+
+每个词有一个情感得分，然后映射为向量，3种方式：直接连在词向量后面，2个通道，分别计算cnn（异构）
 
 ## 结果
 
@@ -133,7 +135,7 @@ Model | SST-5  | SST-2 | MR  | subj |trec
 17    |51.4    |       | 84.5|/     |/
 18    |49.7    |       | 84.3|/     |/
 19    |49.1    |       | 83.9|/     |/
-
+20    |48.8    |/      |/    |/     |/
 
 ## 个人看法
 
