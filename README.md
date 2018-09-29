@@ -115,6 +115,10 @@ tree-lstm
 
 每个词有一个情感得分，然后映射为向量，3种方式：直接连在词向量后面，2个通道，分别计算cnn（异构）
 
+21、A Lexicon-Based Supervised Attention Model for Neural Sentiment Analysis
+
+在loss上有所改进，
+
 ## 结果
 
 Model | SST-5  | SST-2 | MR  | subj |trec
