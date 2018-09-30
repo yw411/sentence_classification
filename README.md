@@ -85,6 +85,10 @@ tree-lstm
 
 多个任务在这里指多个数据集，每个数据集上是一个任务，是个什么原理呢
 
+13.1 A Generalized Recurrent Neural Architecture for Text Classification with Multi-Task Learning
+
+在13的基础上进行的改进
+
 ### 嵌入情感词信息
 
 14、Context-Sensitive Lexicon Features for Neural Sentiment Analysis
